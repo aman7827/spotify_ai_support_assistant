@@ -32,14 +32,15 @@ Customer Support on Twitter (Kaggle)
 Dataset URL:
 https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter
 
-The original dataset contains customer support conversations from multiple companies. For this assignment, SpotifyCares conversations were filtered and processed to create a Spotify-focused support dataset.
+This project uses a Spotify-focused subset derived from the Kaggle
+"Customer Support on Twitter" dataset.
 
-Processing Steps:
-1. Extract Spotify-related conversations.
-2. Remove incomplete threads.
-3. Clean URLs, mentions, and noise.
-4. Build customer-agent interaction pairs.
-5. Create a 200-sample golden evaluation dataset with manual intent labels.
+Processing pipeline:
+1. Filter SpotifyCares conversations.
+2. Build customer-support interaction pairs.
+3. Remove incomplete conversations.
+4. Clean mentions, URLs, and noise.
+5. Create a manually labelled 200-sample golden evaluation dataset.
 
 ## 📊 Benchmark Summary Results
 
