@@ -1,6 +1,6 @@
 # SpotifyCares AI Support Assistant 🎵🤖
 
-An explainable, defensible, and local AI Support Assistant for **SpotifyCares** (`@SpotifyCares`) built for the **Hiver SDE Intern**
+An explainable, retrieval-augmented, and locally executable AI Support Assistant for **SpotifyCares** (`@SpotifyCares`) built for the **Hiver SDE Intern**
 
 The assistant processes incoming customer messages and returns structured JSON:
 ```json
@@ -17,13 +17,29 @@ The assistant processes incoming customer messages and returns structured JSON:
 ## 🌟 Key Features & Constraints Adherence
 
 - **Zero Fine-Tuning / No Multi-Agent**: 100% local, explainable execution.
-- **200-Sample Golden Evaluation Dataset**: Hand-labelled benchmark dataset (`data/golden_evaluation_200.csv`).
 - **Multilevel Intent Classifiers**: Baseline 1 (Majority Class), Baseline 2 (TF-IDF + LogReg), and Final Model (SentenceTransformer `all-MiniLM-L6-v2` + LogReg).
 - **Local FAISS Retrieval Engine**: Sub-millisecond similarity search over historical `@SpotifyCares` Q&A pairs.
 - **Deterministic Rule Escalation Engine**: Transparent business logic for `Auto Handle` vs `Escalate`.
 - **Local Reply Quality Evaluation**: 40-sample benchmark using deterministic scoring heuristics for Correctness, Helpfulness, Tone, and Consistency.
 
 ---
+
+## 📂 Dataset Source
+
+Dataset:
+Customer Support on Twitter (Kaggle)
+
+Dataset URL:
+https://www.kaggle.com/datasets/thoughtvector/customer-support-on-twitter
+
+The original dataset contains customer support conversations from multiple companies. For this assignment, SpotifyCares conversations were filtered and processed to create a Spotify-focused support dataset.
+
+Processing Steps:
+1. Extract Spotify-related conversations.
+2. Remove incomplete threads.
+3. Clean URLs, mentions, and noise.
+4. Build customer-agent interaction pairs.
+5. Create a 200-sample golden evaluation dataset with manual intent labels.
 
 ## 📊 Benchmark Summary Results
 
@@ -58,10 +74,11 @@ The following files are generated automatically when running the evaluation scri
 
 To reproduce these artifacts:
 
-  bash
-- python -m evaluation.evaluate_intents
-- python -m evaluation.evaluate_replies
-- python -m evaluation.failure_analysis
+  ```bash
+python -m evaluation.evaluate_intents
+python -m evaluation.evaluate_replies
+python -m evaluation.failure_analysis
+```
 
 ## 🚀 Quickstart & Reproduction Guide
 
@@ -112,20 +129,20 @@ python -m src.pipeline --message "I can't log into my account on iPhone, says in
 ```
 spotify_ai_support_assistant/
 ├── data/
-│   ├── spotify_raw_pairs.csv          # Raw extracted SpotifyCares Q&A pairs
-│   ├── spotify_cleaned_pairs.csv      # Cleaned pairs dataset (537 pairs)
+│   ├── spotify_raw_pairs.csv          # SpotifyCares conversations extracted from Kaggle Customer Support on Twitter dataset
+│   ├── spotify_cleaned_pairs.csv      # Cleaned SpotifyCares customer-support pairs dataset (537 pairs)
 │   └── golden_evaluation_200.csv      # 200 human-labelled customer messages (Intent labels only)
 ├── src/
 │   ├── __init__.py
 │   ├── data_prep.py                   # Preprocessing & noise cleaning pipeline
 │   ├── intent_classifier.py           # Baseline 1, Baseline 2, & Final ST+LogReg classifier
 │   ├── case_retrieval.py              # SentenceTransformers + FAISS vector search
-│   ├── reply_generator.py             # Short prompt response generator (OpenAI / Fallback)
+│   ├── reply_generator.py             # Support reply generation with template-based fallback responses
 │   ├── escalation_engine.py           # Deterministic business rule escalation engine
 │   └── pipeline.py                    # End-to-end SupportAssistant coordinator CLI
 ├── evaluation/
 │   ├── evaluate_intents.py            # Intent classification metrics evaluator
-│   ├── evaluate_replies.py            # 40-sample LLM-as-a-Judge & Human agreement harness
+│   ├── evaluate_replies.py            # Local reply quality evaluation framework
 │   └── failure_analysis.py            # 5 concrete real failure cases breakdown
 ├── notebooks/
 │   ├── 01_eda_and_data_prep.ipynb
