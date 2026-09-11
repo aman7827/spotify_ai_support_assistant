@@ -9,7 +9,6 @@ Evaluates generated replies on a 40-sample subset of customer messages across:
 3. Tone (1-5)
 4. Consistency (1-5)
 
-Uses GPT-4o-mini as an LLM Judge.
 """
 import os
 import sys
@@ -62,7 +61,7 @@ SUMMARY_CSV_PATH = os.path.join(
 # ==============================================================================
 # NEW LOCAL SCORING ENGINE (REPLACES GPT JUDGE WITH DETERMINISTIC HEURISTICS):
 # ==============================================================================
-def run_llm_judge(
+def run_local_judge(
     customer_message,
     intent,
     generated_reply
@@ -93,10 +92,10 @@ def run_llm_judge(
     consistency = 5 if (intent_match or len(words) >= 5) else 3
 
     return {
-        "llm_correctness": correctness,
-        "llm_helpfulness": helpfulness,
-        "llm_tone": tone,
-        "llm_consistency": consistency
+        "judge_correctness": correctness,
+        "judge_helpfulness": helpfulness,
+        "judge_tone": tone,
+        "judge_consistency": consistency
     }
 
 
@@ -142,7 +141,7 @@ def evaluate_replies():
         generated_reply = output["reply"]
         decision = output["decision"]
 
-        llm_eval = run_llm_judge(
+        llm_eval = run_local_judge(
             msg,
             pred_intent,
             generated_reply
@@ -186,9 +185,9 @@ def evaluate_replies():
 
     for dim in dimensions:
 
-        llm_col = f"llm_{dim}"
+        judge_col = f"judge_{dim}"
 
-        avg_score = df_eval[llm_col].mean()
+        avg_score = df_eval[judge_col].mean()
 
         print(
             f"{dim.capitalize():<12} | Average Score: {avg_score:.2f}/5"
@@ -196,7 +195,7 @@ def evaluate_replies():
 
         metrics_summary.append({
             "Dimension": dim.capitalize(),
-            "LLM Judge Avg Score": round(avg_score, 2)
+            "Local Judge Avg Score": round(avg_score, 2)
         })
 
     print(

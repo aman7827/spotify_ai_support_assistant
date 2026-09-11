@@ -1,6 +1,6 @@
 # SpotifyCares AI Support Assistant 🎵🤖
 
-An explainable, defensible, and local AI Support Assistant for **SpotifyCares** (`@SpotifyCares`) built for the **Exploring Things **
+An explainable, defensible, and local AI Support Assistant for **SpotifyCares** (`@SpotifyCares`) built for the **Hiver SDE Intern**
 
 The assistant processes incoming customer messages and returns structured JSON:
 ```json
@@ -71,7 +71,7 @@ To reproduce these artifacts:
 
 ### 1. Installation
 ```bash
-git clone https://github.com/your-username/spotify_ai_support_assistant.git
+git clone https://github.com/aman7827/spotify_ai_support_assistant.git
 cd spotify_ai_support_assistant
 pip install -r requirements.txt
 ```
