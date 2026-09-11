@@ -37,30 +37,8 @@ SUMMARY_CSV_PATH = os.path.join(
     os.path.dirname(__file__),
     "reply_evaluation_summary.csv"
 )
-
-
-# ==============================================================================
-# ORIGINAL GPT-BASED JUDGE IMPLEMENTATION (COMMENTED OUT BELOW):
-# ==============================================================================
-# def run_llm_judge(
-#     customer_message,
-#     intent,
-#     generated_reply
-# ):
-#     score = 5
-#     if len(generated_reply.split()) < 5:
-#         score = 3
-#     return {
-#         "llm_correctness": score,
-#         "llm_helpfulness": score,
-#         "llm_tone": score,
-#         "llm_consistency": score
-#     }
-# ==============================================================================
-
-# ==============================================================================
 # NEW LOCAL SCORING ENGINE (REPLACES GPT JUDGE WITH DETERMINISTIC HEURISTICS):
-# ==============================================================================
+
 def run_local_judge(
     customer_message,
     intent,

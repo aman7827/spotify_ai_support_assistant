@@ -1,87 +1,87 @@
 # Decision Log: SpotifyCares AI Support Assistant
 
-Documenting 12 core software engineering and architectural decisions made during development.
+Documenting 12 core engineering and architectural decisions made during development.
 
 ---
 
-### Decision 1: Select SpotifyCares over other Twitter Support Brands
-- **What was decided**: Selected `@SpotifyCares` as the sole dataset brand.
-- **Alternatives considered**: `@AppleSupport`, `@AmazonHelp`, `@Uber_Support`.
-- **Why made**: Spotify support handles clear, distinct technical, financial, and account security intents with standard Twitter Q&A interaction patterns, avoiding retail logistics complexity.
+### Decision 1: Focus on `@SpotifyCares` Dataset
+- **Choice**: Selected `@SpotifyCares` as the target brand dataset.
+- **Alternatives**: `@AppleSupport`, `@AmazonHelp`, `@Uber_Support`.
+- **Reasoning**: Spotify support covers clear, distinct technical, financial, and account security issues. Its Twitter interactions follow consistent Q&A patterns without the logistical complexity of retail shipping or rideshare tracking.
 
 ---
 
-### Decision 2: Defer Documentation Deliverables to Finalization Phase
-- **What was decided**: Deferred `README.md`, `Mandatory_Report.md`, and `Decision_Log.md` until after implementation and evaluation execution.
-- **Alternatives considered**: Drafting docs concurrently during initial phase.
-- **Why made**: Ensures report metrics, failure analysis, and trade-offs are grounded in empirical evaluation output rather than assumptions.
+### Decision 2: Complete Code & Evaluation Before Writing Docs
+- **Choice**: Deferred writing `README.md`, `Mandatory_Report.md`, and `Decision_Log.md` until the pipeline and evaluation scripts were fully built and tested.
+- **Alternatives**: Writing documentation concurrently during early development.
+- **Reasoning**: Ensures all benchmark metrics, failure cases, and system trade-offs in the final report are backed by actual runtime data rather than initial assumptions.
 
 ---
 
-### Decision 3: Simplify Golden Evaluation Dataset to 200 Intent-Only Labels
-- **What was decided**: Hand-labelled 200 customer messages with Intent labels ONLY (omitting 200 hand-crafted replies).
-- **Alternatives considered**: Hand-crafting 200 custom support replies.
-- **Why made**: 200 intent labels provide a statistically robust benchmark for classification accuracy. Reply quality is far more effectively evaluated on a 40-sample representative subset using historical references and LLM-as-a-Judge.
+### Decision 3: Use a 200-Sample Golden Evaluation Set for Intents
+- **Choice**: Manually labeled 200 customer messages with intent tags for classification evaluation.
+- **Alternatives**: Writing 200 custom reference replies by hand.
+- **Reasoning**: 200 intent labels provide a solid, statistically reliable benchmark for model accuracy. Reply quality is better evaluated on a smaller 40-sample representative subset using human domain scoring and automated heuristics.
 
 ---
 
-### Decision 4: Use SentenceTransformer (`all-MiniLM-L6-v2`) + Logistic Regression for Final Classifier
-- **What was decided**: Combined pre-trained sentence embeddings with a linear Logistic Regression classifier.
-- **Alternatives considered**: Fine-tuning BERT/RoBERTa, Deep Neural Networks, XGBoost.
-- **Why made**: Meets strict zero fine-tuning constraints, trains in $<2$ seconds locally, is 100% reproducible, and achieves 75.5% accuracy.
+### Decision 4: SentenceTransformer (`all-MiniLM-L6-v2`) + Logistic Regression Classifier
+- **Choice**: Combined pre-trained sentence embeddings with a multi-class Logistic Regression classifier.
+- **Alternatives**: Fine-tuning BERT/RoBERTa models, Deep Neural Networks, XGBoost.
+- **Reasoning**: Avoids heavy deep-learning fine-tuning, trains locally in under 2 seconds, runs reliably on any laptop, and achieves strong classification accuracy (75.5%).
 
 ---
 
-### Decision 5: Use Local FAISS (`IndexFlatIP`) for Historical Case Retrieval
-- **What was decided**: Indexed normalized sentence embeddings into a local in-memory FAISS inner-product index.
-- **Alternatives considered**: Pinecone, Chroma Cloud, Weaviate, Milvus.
-- **Why made**: Avoids external cloud DB dependencies, provides sub-millisecond retrieval latency, and runs 100% locally.
+### Decision 5: Local FAISS (`IndexFlatIP`) for Historical Case Retrieval
+- **Choice**: Indexed sentence embeddings into an in-memory FAISS inner-product vector index.
+- **Alternatives**: Managed vector databases like Pinecone, Chroma, or Milvus.
+- **Reasoning**: Eliminates external API dependencies and cloud database setup, providing sub-millisecond local search times.
 
 ---
 
-### Decision 6: Implement Rule-Based Escalation Engine instead of ML
-- **What was decided**: Built a deterministic rule engine for escalation decisions.
-- **Alternatives considered**: Training a binary classification model for escalation.
-- **Why made**: Business logic for financial and security risk must be 100% predictable, auditable, and easily editable by customer ops teams.
+### Decision 6: Rule-Based Engine for Escalation Decisions
+- **Choice**: Built a deterministic, rule-based decision engine to flag whether an issue is `Auto Handle` or `Escalate`.
+- **Alternatives**: Training an ML model to predict escalation status.
+- **Reasoning**: Safety-critical business logic (like handling security breaches or billing refunds) needs to be 100% predictable, auditable, and easy to update without retraining a model.
 
 ---
 
-### Decision 7: Short Prompt Design for Reply Generation
-- **What was decided**: Used short, direct prompts (Query + Intent + Top-3 Cases) without Chain-of-Thought or tool calling.
-- **Alternatives considered**: Multi-step CoT prompting, ReAct agent workflows.
-- **Why made**: Adheres to strict assignment rules against multi-agent/CoT overhead while generating concise, empathetic support replies.
+### Decision 7: Concise Prompt Design for Support Replies
+- **Choice**: Used direct, minimal prompt structures (Query + Intent + Top-3 Similar Cases).
+- **Alternatives**: Complex multi-agent setups or multi-step reasoning prompts.
+- **Reasoning**: Keeps latency low, minimizes API dependency, and reliably generates short, friendly support replies matching Spotify’s Twitter tone.
 
 ---
 
-### Decision 8: Fallback Template Synthesizer in Reply Generator
-- **What was decided**: Built a local template synthesizer fallback when OpenAI API keys are absent.
-- **Alternatives considered**: Requiring mandatory API keys or failing execution.
-- **Why made**: Guarantees 100% offline local reproducibility for any technical interviewer reviewing the code.
+### Decision 8: Fallback Template Synthesizer for Local Execution
+- **Choice**: Built a local template-based fallback reply generator when LLM API keys are not provided.
+- **Alternatives**: Requiring an API key to run the project or letting the script fail.
+- **Reasoning**: Guarantees that any interviewer or reviewer can clone the repository and test the end-to-end pipeline 100% offline without needing paid API keys.
 
 ---
 
-### Decision 9: LLM-as-a-Judge + Human Agreement Reply Evaluation Framework
-- **What was decided**: Evaluated 40 generated replies across 4 criteria (Correctness, Helpfulness, Tone, Consistency) comparing LLM judge scores with human scores.
-- **Alternatives considered**: BLEU / ROUGE n-gram metrics.
-- **Why made**: BLEU/ROUGE penalize valid, paraphrased support replies. LLM-as-a-Judge correlated strongly ($>0.79$ correctness) with human judgment.
+### Decision 9: 4-Metric Framework for Reply Evaluation
+- **Choice**: Evaluated generated replies across 4 key dimensions (Correctness, Helpfulness, Tone, Consistency) comparing automated LLM judge scores against manual ratings.
+- **Alternatives**: Traditional n-gram overlap metrics like BLEU or ROUGE.
+- **Reasoning**: BLEU and ROUGE heavily penalize valid, rephrased support replies. Evaluating on core qualities like tone and correctness aligns much better with real-world customer support standards.
 
 ---
 
-### Decision 10: 8 Mutually Exclusive Business Intents Taxonomy
-- **What was decided**: Defined 8 business-friendly intents spanning auth, subscription, billing, audio bugs, crashes, security, playlists, and general queries.
-- **Alternatives considered**: 3 broad categories or 25 fine-grained sub-intents.
-- **Why made**: 8 categories cover $>95\%$ of support traffic while maintaining clear class boundaries.
+### Decision 10: Taxonomy of 8 Mutually Exclusive Business Intents
+- **Choice**: Structured intent classification around 8 core categories (Auth, Subscription, Billing, Audio Bugs, App Performance, Security, Playlists, and General Queries).
+- **Alternatives**: 3 broad categories or 25+ fine-grained sub-intents.
+- **Reasoning**: 8 categories cover over 95% of typical support queries while keeping class boundaries clear enough for efficient ML classification.
 
 ---
 
-### Decision 11: Inner Product (IP) FAISS Index with L2 Normalization
-- **What was decided**: Applied `faiss.normalize_L2` before inserting embeddings into `IndexFlatIP`.
-- **Alternatives considered**: Raw `IndexFlatL2` (Euclidean distance).
-- **Why made**: Normalized L2 Inner Product is mathematically identical to Cosine Similarity, which excels at semantic textual similarity.
+### Decision 11: L2-Normalized Inner Product (IP) FAISS Index
+- **Choice**: Applied `faiss.normalize_L2` to feature vectors before inserting them into `IndexFlatIP`.
+- **Alternatives**: Raw Euclidean distance (`IndexFlatL2`).
+- **Reasoning**: Normalizing vector lengths makes the Inner Product mathematically identical to Cosine Similarity, which works best for semantic text matching.
 
 ---
 
-### Decision 12: Structuring Output Payload as Single Standard JSON Object
-- **What was decided**: Standardized final pipeline output format to `{intent, reply, decision, reason}`.
-- **Alternatives considered**: Returning free-form text markdown or complex nested metadata.
-- **Why made**: Matches exact assignment prompt requirements and enables clean API integration.
+### Decision 12: Standardized Single JSON Output Structure
+- **Choice**: Formatted final output as a clean JSON object containing `{intent, reply, decision, reason}`.
+- **Alternatives**: Free-form text output or nested complex metadata.
+- **Reasoning**: Matches the target format specified in the problem statement and makes the output immediately ready for downstream API integration.
