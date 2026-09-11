@@ -46,6 +46,22 @@ The evaluation framework uses a lightweight local scoring engine that evaluates 
 This enables fully reproducible offline evaluation without requiring API credits.
 
 ---
+### Generated Evaluation Artifacts
+
+The following files are generated automatically when running the evaluation scripts and are not stored in the repository:
+
+- evaluation/intent_metrics_summary.csv
+- evaluation/reply_quality_evaluation_40.csv
+- evaluation/reply_evaluation_summary.csv
+- evaluation/failure_analysis_5.csv
+- evaluation/failure_analysis_5.md
+
+To reproduce these artifacts:
+
+  bash
+python -m evaluation.evaluate_intents
+python -m evaluation.evaluate_replies
+python -m evaluation.failure_analysis
 
 ## 🚀 Quickstart & Reproduction Guide
 
