@@ -1,0 +1,201 @@
+sample_id,customer_message,intent
+GOLDEN-001,"I cannot log into my Spotify account on my iPhone 15, says wrong password even after reset.",Login & Auth Issue
+GOLDEN-002,Getting 2FA authentication code timeout when trying to sign in.,Login & Auth Issue
+GOLDEN-003,Spotify web player keeps giving error 403 authorization failed when I enter credentials.,Login & Auth Issue
+GOLDEN-004,Why am I forced to log in every single time I restart my Windows app?,Login & Auth Issue
+GOLDEN-005,Password reset email is never arriving in my Outlook inbox.,Login & Auth Issue
+GOLDEN-006,"Can't log in with Facebook connect anymore, keeps throwing OAuth error.",Login & Auth Issue
+GOLDEN-007,My login fails with error code 17 on desktop app.,Login & Auth Issue
+GOLDEN-008,Unable to sign in on Apple TV Spotify app.,Login & Auth Issue
+GOLDEN-009,Says my email address is not recognized when attempting password recovery.,Login & Auth Issue
+GOLDEN-010,Multi-device login restriction error popup popping up unexpectedly.,Login & Auth Issue
+GOLDEN-011,"Can't log into Spotify on Android Auto, says auth failed.",Login & Auth Issue
+GOLDEN-012,"Forgot my username and password, how do I recover my account?",Login & Auth Issue
+GOLDEN-013,App logged me out in the middle of listening and won't let me back in.,Login & Auth Issue
+GOLDEN-014,Verification link expired when attempting to verify new email.,Login & Auth Issue
+GOLDEN-015,Getting bad gateway 502 on Spotify sign-in page.,Login & Auth Issue
+GOLDEN-016,Can't sign in via Google login option on iPad.,Login & Auth Issue
+GOLDEN-017,Session expired message keeps recurring every 5 minutes.,Login & Auth Issue
+GOLDEN-018,Locked out of account due to too many failed login attempts.,Login & Auth Issue
+GOLDEN-019,How do I change my login password from inside the mobile app?,Login & Auth Issue
+GOLDEN-020,Smart Lock auto-login is selecting the wrong Spotify account.,Login & Auth Issue
+GOLDEN-021,Can't log in using my phone number verification code.,Login & Auth Issue
+GOLDEN-022,Security PIN for login is not working on PS5 Spotify app.,Login & Auth Issue
+GOLDEN-023,Web player says session invalid please log in again repeatedly.,Login & Auth Issue
+GOLDEN-024,"Reset password page won't load, just shows a blank white screen.",Login & Auth Issue
+GOLDEN-025,Unable to log in after updating my iPhone to iOS 18.,Login & Auth Issue
+GOLDEN-026,I upgraded to Spotify Premium yesterday but my account still says Free.,Subscription & Premium
+GOLDEN-027,How do I invite my partner to my Spotify Premium Duo plan?,Subscription & Premium
+GOLDEN-028,"My student discount subscription ended, how do I re-verify my SheerID?",Subscription & Premium
+GOLDEN-029,Can I change my Spotify Family Plan billing manager to another account?,Subscription & Premium
+GOLDEN-030,Redeemed a 12-month gift card but my account shows only 1 month active.,Subscription & Premium
+GOLDEN-031,How do I cancel my Spotify Premium auto-renewal subscription?,Subscription & Premium
+GOLDEN-032,Does Premium subscription include ad-free audiobooks access?,Subscription & Premium
+GOLDEN-033,"Switched from Individual to Family plan, will I lose my downloaded music?",Subscription & Premium
+GOLDEN-034,My subscription canceled automatically because my card expired.,Subscription & Premium
+GOLDEN-035,How do I check when my current Premium billing cycle ends?,Subscription & Premium
+GOLDEN-036,Is there a discount on Spotify Premium if I pay for a full year upfront?,Subscription & Premium
+GOLDEN-037,Added a member to Family plan but they didn't receive the invite link.,Subscription & Premium
+GOLDEN-038,Why did my Premium status drop back to Free mid-month?,Subscription & Premium
+GOLDEN-039,Can I pause my Spotify Premium subscription for two months while traveling?,Subscription & Premium
+GOLDEN-040,How do I change my Spotify subscription plan from Duo to Individual?,Subscription & Premium
+GOLDEN-041,SheerID verification rejected my university student enrollment document.,Subscription & Premium
+GOLDEN-042,Prepaid subscription card PIN code is showing as invalid.,Subscription & Premium
+GOLDEN-043,Does Spotify Family Plan work if members live in different cities?,Subscription & Premium
+GOLDEN-044,My Premium trial ended early without warning.,Subscription & Premium
+GOLDEN-045,How to switch payment method for my ongoing Premium subscription?,Subscription & Premium
+GOLDEN-046,Is Spotify Premium Duo available in Canada?,Subscription & Premium
+GOLDEN-047,Can I gift a 6-month Spotify Premium subscription to a friend?,Subscription & Premium
+GOLDEN-048,"Subscribed via Apple App Store billing, how do I manage my plan?",Subscription & Premium
+GOLDEN-049,My partner accidentally removed me from our Spotify Duo plan.,Subscription & Premium
+GOLDEN-050,Re-subscribed today but still seeing ads between tracks.,Subscription & Premium
+GOLDEN-051,You double charged my credit card $10.99 for Spotify Premium this month!,Billing & Refund Request
+GOLDEN-052,I was billed after canceling my trial last week. I need an immediate refund.,Billing & Refund Request
+GOLDEN-053,Unrecognized charge of $16.99 from Spotify on my bank statement.,Billing & Refund Request
+GOLDEN-054,How long does it take for a refunded payment to post back to my Visa card?,Billing & Refund Request
+GOLDEN-055,Payment failed error when trying to update my debit card details.,Billing & Refund Request
+GOLDEN-056,Charged twice in the same billing cycle on PayPal.,Billing & Refund Request
+GOLDEN-057,I want a refund for the remaining months of my annual prepaid plan.,Billing & Refund Request
+GOLDEN-058,Why did the subscription price jump from $9.99 to $11.99 without notice?,Billing & Refund Request
+GOLDEN-059,Card transaction declined even though I have sufficient funds.,Billing & Refund Request
+GOLDEN-060,Requesting a refund because the app didn't work on my device all month.,Billing & Refund Request
+GOLDEN-061,Got an invoice for a subscription I never signed up for.,Billing & Refund Request
+GOLDEN-062,Incorrect sales tax added to my monthly Spotify invoice.,Billing & Refund Request
+GOLDEN-063,Can I get a VAT invoice for my business subscription payment?,Billing & Refund Request
+GOLDEN-064,Charged for Premium even though I used a promotional free code.,Billing & Refund Request
+GOLDEN-065,Payment status shows pending for 3 days on my bank account.,Billing & Refund Request
+GOLDEN-066,Received a payment overdue email despite active auto-debit.,Billing & Refund Request
+GOLDEN-067,Overcharged for my Spotify Student subscription plan.,Billing & Refund Request
+GOLDEN-068,How do I update my billing address on my Spotify account?,Billing & Refund Request
+GOLDEN-069,Direct carrier billing payment failed on my mobile phone bill.,Billing & Refund Request
+GOLDEN-070,Can I pay my Spotify bill using UPI or Paytm in India?,Billing & Refund Request
+GOLDEN-071,Refund status says processed but money hasn't reached my account.,Billing & Refund Request
+GOLDEN-072,Accidentally bought two individual subscriptions on two separate accounts.,Billing & Refund Request
+GOLDEN-073,Bank declined Spotify charge due to international transaction restriction.,Billing & Refund Request
+GOLDEN-074,Where can I download receipts for past monthly charges?,Billing & Refund Request
+GOLDEN-075,Duplicate billing transaction ID showing on my credit card statement.,Billing & Refund Request
+GOLDEN-076,Music stops playing after 10 seconds every time screen locks on Android.,Playback & Audio Bugs
+GOLDEN-077,Audio quality sounds extremely crackly and distorted on Bluetooth headphones.,Playback & Audio Bugs
+GOLDEN-078,Downloaded offline songs won't play when I turn off Wi-Fi and mobile data.,Playback & Audio Bugs
+GOLDEN-079,Crossfade between songs is not working on iOS 18 app.,Playback & Audio Bugs
+GOLDEN-080,Volume suddenly drops super low whenever a new song starts playing.,Playback & Audio Bugs
+GOLDEN-081,Songs skip automatically to the next track mid-way through playback.,Playback & Audio Bugs
+GOLDEN-082,Explicit tracks are greyed out and unplayable despite explicit filter off.,Playback & Audio Bugs
+GOLDEN-083,Audio buffering endlessly on 5G cellular connection.,Playback & Audio Bugs
+GOLDEN-084,Left and right audio channels are imbalanced on desktop app.,Playback & Audio Bugs
+GOLDEN-085,Song lyrics fail to sync with current track playback position.,Playback & Audio Bugs
+GOLDEN-086,Shuffle mode is repeating the same 5 songs over and over.,Playback & Audio Bugs
+GOLDEN-087,Equalizer settings reset every time I close the Spotify app.,Playback & Audio Bugs
+GOLDEN-088,No sound coming out of speakers even though track timeline is moving.,Playback & Audio Bugs
+GOLDEN-089,High quality 320kbps streaming option is missing in app settings.,Playback & Audio Bugs
+GOLDEN-090,Audio stutters when switching apps on my phone.,Playback & Audio Bugs
+GOLDEN-091,Downloaded songs un-downloaded themselves automatically overnight.,Playback & Audio Bugs
+GOLDEN-092,Autoplay next song stops working after playing one album.,Playback & Audio Bugs
+GOLDEN-093,Mono audio toggle is stuck turned on.,Playback & Audio Bugs
+GOLDEN-094,Gapless playback option is grayed out on desktop version.,Playback & Audio Bugs
+GOLDEN-095,Song metadata title and cover art don't match the playing audio.,Playback & Audio Bugs
+GOLDEN-096,Podcast audio pitch is distorted when played at 1.5x speed.,Playback & Audio Bugs
+GOLDEN-097,Volume normalization causes classical music tracks to sound too quiet.,Playback & Audio Bugs
+GOLDEN-098,Offline listening says device offline limit reached (30 day rule).,Playback & Audio Bugs
+GOLDEN-099,Bluetooth audio controls play/pause buttons are non-responsive.,Playback & Audio Bugs
+GOLDEN-100,Background playback stops whenever I open Instagram or TikTok.,Playback & Audio Bugs
+GOLDEN-101,Spotify desktop app crashes instantly every time I open my Saved Songs.,App Crash & Performance
+GOLDEN-102,"App is extremely slow and freezing on my iPad Air, takes 30s to load.",App Crash & Performance
+GOLDEN-103,Spotify crashes on startup after updating to latest iOS release.,App Crash & Performance
+GOLDEN-104,App causes massive battery drain and makes my Android phone hot.,App Crash & Performance
+GOLDEN-105,Spotify Connect cannot find my Smart TV or Chromecast on local Wi-Fi.,App Crash & Performance
+GOLDEN-106,App freezes on black screen whenever I tap on Search tab.,App Crash & Performance
+GOLDEN-107,Spotify taking up 45GB of storage despite setting cache limit to 5GB.,App Crash & Performance
+GOLDEN-108,Desktop app consumes 95% CPU resources on Windows 11.,App Crash & Performance
+GOLDEN-109,App crashes every time I try to stream music over Apple CarPlay.,App Crash & Performance
+GOLDEN-110,Spotify widget on Android home screen keeps freezing.,App Crash & Performance
+GOLDEN-111,App closes unexpectedly when receiving an incoming phone call.,App Crash & Performance
+GOLDEN-112,Clear cache button inside app settings is not responding.,App Crash & Performance
+GOLDEN-113,Spotify Web Player freezes Google Chrome tab repeatedly.,App Crash & Performance
+GOLDEN-114,App stays stuck on 'Connecting...' banner at top of screen.,App Crash & Performance
+GOLDEN-115,"Search results refuse to load, just showing infinite spinning wheel.",App Crash & Performance
+GOLDEN-116,Mac app crashes whenever I switch between dark mode and light mode.,App Crash & Performance
+GOLDEN-117,App UI elements overlap and text is cut off on small screen devices.,App Crash & Performance
+GOLDEN-118,Spotify app keeps crashing when connected to Galaxy Watch.,App Crash & Performance
+GOLDEN-119,Offline mode toggle crashes app settings menu.,App Crash & Performance
+GOLDEN-120,App freezes when trying to share a song link to Instagram Stories.,App Crash & Performance
+GOLDEN-121,Background RAM usage of Spotify app exceeds 3GB on Windows.,App Crash & Performance
+GOLDEN-122,App crashes whenever I open an artist page with video Canvas enabled.,App Crash & Performance
+GOLDEN-123,Lock screen player controls vanish after 2 minutes of playback.,App Crash & Performance
+GOLDEN-124,Spotify web player fails to launch on Safari browser.,App Crash & Performance
+GOLDEN-125,App re-indexes entire music library every time device reboots.,App Crash & Performance
+GOLDEN-126,My account was hacked! The email address was changed without my permission.,Account Compromise & Security
+GOLDEN-127,I see unfamiliar songs playing from a device named 'Living Room PC' that isn't mine.,Account Compromise & Security
+GOLDEN-128,"Received an email notification that my Spotify password was altered, but I didn't do it.",Account Compromise & Security
+GOLDEN-129,"Someone added explicit songs to my private playlists, is my account breached?",Account Compromise & Security
+GOLDEN-130,How do I force sign-out on all devices logged into my Spotify account?,Account Compromise & Security
+GOLDEN-131,My account was accessed from IP address in another country.,Account Compromise & Security
+GOLDEN-132,Someone changed my Spotify username and profile picture without authorization.,Account Compromise & Security
+GOLDEN-133,Lost access to my account after unauthorized email address update.,Account Compromise & Security
+GOLDEN-134,Unrecognized third party app connected to my Spotify account.,Account Compromise & Security
+GOLDEN-135,My saved playlists were completely wiped out by an intruder.,Account Compromise & Security
+GOLDEN-136,How do I turn on Two-Factor Authentication (2FA) for extra security?,Account Compromise & Security
+GOLDEN-137,I suspect my Spotify account details were exposed in a credential leak.,Account Compromise & Security
+GOLDEN-138,Received suspicious password reset request emails I didn't initiate.,Account Compromise & Security
+GOLDEN-139,Someone is listening to music on my account preventing me from listening.,Account Compromise & Security
+GOLDEN-140,My Spotify account was linked to an unknown Facebook account.,Account Compromise & Security
+GOLDEN-141,Security warning alert saying account locked due to suspicious activity.,Account Compromise & Security
+GOLDEN-142,How to revoke access for unauthorized apps connected to Spotify?,Account Compromise & Security
+GOLDEN-143,Someone deleted all my Liked Songs overnight.,Account Compromise & Security
+GOLDEN-144,Stranger added themselves as a member on my Family plan.,Account Compromise & Security
+GOLDEN-145,My account details were leaked on an online forum.,Account Compromise & Security
+GOLDEN-146,Can Spotify security lock my compromised account temporarily?,Account Compromise & Security
+GOLDEN-147,Unauthorized billing address modification on my account profile.,Account Compromise & Security
+GOLDEN-148,Unknown device keeps taking over my Spotify Connect session.,Account Compromise & Security
+GOLDEN-149,Received phishing email pretending to be Spotify security team.,Account Compromise & Security
+GOLDEN-150,How do I permanently secure my account after a hack?,Account Compromise & Security
+GOLDEN-151,All my created playlists disappeared from my library after app update.,Playlist & Library Issues
+GOLDEN-152,How do I sync local MP3 audio files from laptop to my mobile Spotify app?,Playlist & Library Issues
+GOLDEN-153,"Is there still a 10,000 track limit for Liked Songs library?",Playlist & Library Issues
+GOLDEN-154,"Accidentally deleted a playlist, how can I recover it back?",Playlist & Library Issues
+GOLDEN-155,Cannot change custom playlist cover image on mobile app.,Playlist & Library Issues
+GOLDEN-156,Collaborative playlist link isn't allowing my friend to add tracks.,Playlist & Library Issues
+GOLDEN-157,Local files added on PC won't download on my iPhone playlist.,Playlist & Library Issues
+GOLDEN-158,Playlist description edit button is greyed out.,Playlist & Library Issues
+GOLDEN-159,How to merge two existing playlists into one single playlist?,Playlist & Library Issues
+GOLDEN-160,Duplicate songs are appearing automatically inside my playlist.,Playlist & Library Issues
+GOLDEN-161,Can't change playlist privacy setting from public to private.,Playlist & Library Issues
+GOLDEN-162,Songs in playlist play in alphabetical order instead of custom order.,Playlist & Library Issues
+GOLDEN-163,Liked Songs list is not sorting properly by Recently Added.,Playlist & Library Issues
+GOLDEN-164,Folder containing 10 playlists vanished from desktop sidebar.,Playlist & Library Issues
+GOLDEN-165,Cannot remove a specific song from my Liked Songs list.,Playlist & Library Issues
+GOLDEN-166,Shared playlist link shows error 'Content Not Available' to receiver.,Playlist & Library Issues
+GOLDEN-167,Local files tab is missing in Spotify desktop app settings.,Playlist & Library Issues
+GOLDEN-168,Custom playlist ordering keeps resetting to default.,Playlist & Library Issues
+GOLDEN-169,How do I download an entire playlist for offline listening?,Playlist & Library Issues
+GOLDEN-170,Playlist total duration time display is incorrect.,Playlist & Library Issues
+GOLDEN-171,Cannot pin playlist to top of library list on Android.,Playlist & Library Issues
+GOLDEN-172,Made a playlist public but it's not showing up in search results.,Playlist & Library Issues
+GOLDEN-173,Saved albums are missing from my Library view.,Playlist & Library Issues
+GOLDEN-174,How do I transfer playlists from an old Spotify account to a new one?,Playlist & Library Issues
+GOLDEN-175,Playlist cover image upload fails with error file size too large.,Playlist & Library Issues
+GOLDEN-176,When is Spotify HiFi Lossless audio streaming releasing globally?,General Query & Feature Request
+GOLDEN-177,Can I hide or remove podcast recommendations from my home tab?,General Query & Feature Request
+GOLDEN-178,When does Spotify Wrapped 2026 release for users?,General Query & Feature Request
+GOLDEN-179,How do I view live synchronized song lyrics on desktop app?,General Query & Feature Request
+GOLDEN-180,Please add a light mode theme option to Spotify mobile app!,General Query & Feature Request
+GOLDEN-181,Does Spotify have a DJ AI mode available in Australia?,General Query & Feature Request
+GOLDEN-182,How do I clear my recently played artists search history?,General Query & Feature Request
+GOLDEN-183,Feature request: Add real-time friend activity feed to mobile app.,General Query & Feature Request
+GOLDEN-184,Is Spotify Premium supported on HomePod mini smart speakers?,General Query & Feature Request
+GOLDEN-185,How to turn off Canvas video loops playing behind songs?,General Query & Feature Request
+GOLDEN-186,Can I change my public Spotify display profile name?,General Query & Feature Request
+GOLDEN-187,Request: Allow sorting playlists by song BPM or key signature.,General Query & Feature Request
+GOLDEN-188,Does Spotify support Dolby Atmos spatial audio streaming?,General Query & Feature Request
+GOLDEN-189,How do I check total listening hours on my Spotify profile?,General Query & Feature Request
+GOLDEN-190,When will Spotify Audiobooks feature be launched in Europe?,General Query & Feature Request
+GOLDEN-191,Can I sleep timer set for 45 minutes on iOS player screen?,General Query & Feature Request
+GOLDEN-192,Feature idea: Allow pin-protecting private playlists with passcode.,General Query & Feature Request
+GOLDEN-193,How do I turn on explicit content filter for kids account?,General Query & Feature Request
+GOLDEN-194,Is there a native Spotify app available for Linux distributions?,General Query & Feature Request
+GOLDEN-195,How to exclude a specific playlist from my taste profile recommendations?,General Query & Feature Request
+GOLDEN-196,Can I block an artist so their tracks never play in my mixes?,General Query & Feature Request
+GOLDEN-197,How to share Spotify song snippet directly to WhatsApp status?,General Query & Feature Request
+GOLDEN-198,Request: Bring back full lyrics full-screen mode on iPad.,General Query & Feature Request
+GOLDEN-199,Does Spotify offer student pricing for master degree students?,General Query & Feature Request
+GOLDEN-200,How do I change app icon aesthetic on iPhone home screen?,General Query & Feature Request
