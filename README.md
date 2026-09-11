@@ -59,9 +59,9 @@ The following files are generated automatically when running the evaluation scri
 To reproduce these artifacts:
 
   bash
-python -m evaluation.evaluate_intents
-python -m evaluation.evaluate_replies
-python -m evaluation.failure_analysis
+- python -m evaluation.evaluate_intents
+- python -m evaluation.evaluate_replies
+- python -m evaluation.failure_analysis
 
 ## 🚀 Quickstart & Reproduction Guide
 
