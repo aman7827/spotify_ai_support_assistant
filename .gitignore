@@ -6,3 +6,6 @@ __pycache__/
 
 evaluation/*.csv
 evaluation/*.md
+
+data/*.DATASET_SOURCE.md
+
