@@ -42,6 +42,17 @@ Processing pipeline:
 4. Clean mentions, URLs, and noise.
 5. Create a manually labelled 200-sample golden evaluation dataset.
 
+## 🛠️ Acknowledgments & Tooling
+
+- - **AI Assistance**: ChatGPT were used for brainstorming, documentation drafting, code scaffolding suggestions, debugging assistance, and evaluation design discussions. All submitted code, experiments, architectural decisions, and evaluation results were reviewed, tested, modified where necessary, and validated by the author.
+
+- **Open Source Libraries**:
+  - sentence-transformers
+  - faiss-cpu
+  - scikit-learn
+  - pandas
+  - numpy
+
 ## 📊 Benchmark Summary Results
 
 ### 1. Intent Classification Performance (200 Golden Samples)
