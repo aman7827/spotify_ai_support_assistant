@@ -24,7 +24,7 @@ $$\text{Customer Message} \longrightarrow \text{Intent Classification} \longrigh
   "decision": "Auto Handle ",
   "reason": "Standard account sync steps applied for active subscription query."
 }
-```
+---
 
 The system prioritizes **predictability, explainability, and local auditability** over black-box model sophistication.
 
@@ -74,7 +74,7 @@ A balanced 200-sample golden evaluation dataset (data/golden_evaluation_200.csv)
 
 │ Stage 4: Escalation Engine   │ (Deterministic business rule risk engine)
 
-               │
+               │ (quality control)
 
 │ Stage 5: Structured JSON Output
 
